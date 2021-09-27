@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.socialmedia.app.bean.User;
-import com.socialmedia.app.controller.users.exception.UserNotFoundException;
 import com.socialmedia.app.dao.UserDaoService;
+import com.socialmedia.app.exception.UserNotFoundException;
 
 @RestController
 public class UserController {
