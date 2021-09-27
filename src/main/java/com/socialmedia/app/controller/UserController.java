@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.socialmedia.app.bean.User;
+import com.socialmedia.app.controller.users.exception.UserNotFoundException;
 import com.socialmedia.app.dao.UserDaoService;
 
 @RestController
@@ -28,7 +29,10 @@ public class UserController {
 
 	@GetMapping("/users/{id}")
 	public User retrieveUser(@PathVariable int id) {
-		return service.finOne(id);
+		User user = service.finOne(id);
+		if(user == null)
+			throw new UserNotFoundException("id-" + id);
+		return user;
 	}
 
 	@PostMapping("/users")
