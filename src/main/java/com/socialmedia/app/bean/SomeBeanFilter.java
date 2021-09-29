@@ -1,9 +1,10 @@
 package com.socialmedia.app.bean;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
-@JsonIgnoreProperties(value= {"value1","value2"})
-public class SomeBean {
+@JsonFilter("SomeBeanFilter")
+public class SomeBeanFilter {
+	
 	private String value1;
 	private String value2;
 	private String value3;
@@ -26,17 +27,15 @@ public class SomeBean {
 	public void setValue3(String value3) {
 		this.value3 = value3;
 	}
-	public SomeBean(String value1, String value2, String value3) {
+	public SomeBeanFilter(String value1, String value2, String value3) {
 		super();
 		this.value1 = value1;
 		this.value2 = value2;
 		this.value3 = value3;
 	}
 	
-	public SomeBean() {
+	public SomeBeanFilter() {
 		
 	}
-	
-	
-	
+
 }

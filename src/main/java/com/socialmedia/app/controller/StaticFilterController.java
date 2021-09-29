@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.socialmedia.app.bean.SomeBean;
 
 @RestController
-public class StaticFilterExample {
+public class StaticFilterController {
 
 	@GetMapping("static-filter")
 	public List<SomeBean> statiFilter() {
